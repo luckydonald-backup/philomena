@@ -8,6 +8,8 @@ defmodule Philomena.Images do
 
   alias Philomena.Images.Image
 
+  defdelegate authorize(action, user, params), to: Philomena.Images.Policy
+
   @doc """
   Returns the list of images.
 
