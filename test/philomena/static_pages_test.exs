@@ -39,12 +39,17 @@ defmodule Philomena.StaticPagesTest do
 
     test "update_static_page/2 with valid data updates the static_page" do
       static_page = static_page_fixture()
-      assert {:ok, %StaticPage{} = static_page} = StaticPages.update_static_page(static_page, @update_attrs)
+
+      assert {:ok, %StaticPage{} = static_page} =
+               StaticPages.update_static_page(static_page, @update_attrs)
     end
 
     test "update_static_page/2 with invalid data returns error changeset" do
       static_page = static_page_fixture()
-      assert {:error, %Ecto.Changeset{}} = StaticPages.update_static_page(static_page, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               StaticPages.update_static_page(static_page, @invalid_attrs)
+
       assert static_page == StaticPages.get_static_page!(static_page.id)
     end
 
