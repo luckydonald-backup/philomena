@@ -8,6 +8,8 @@ defmodule Philomena.Forums do
 
   alias Philomena.Forums.Forum
 
+  defdelegate authorize(action, user, params), to: Philomena.Forums.Policy
+
   @doc """
   Returns the list of forums.
 
