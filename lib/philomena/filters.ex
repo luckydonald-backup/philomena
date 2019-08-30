@@ -8,6 +8,8 @@ defmodule Philomena.Filters do
 
   alias Philomena.Filters.Filter
 
+  defdelegate authorize(action, user, params), to: Philomena.Filters.Policy
+
   @doc """
   Returns the list of filters.
 
