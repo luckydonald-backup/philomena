@@ -8,6 +8,8 @@ defmodule Philomena.Conversations do
 
   alias Philomena.Conversations.Conversation
 
+  defdelegate authorize(action, user, params), to: Philomena.Conversations.Policy
+
   @doc """
   Returns the list of conversations.
 

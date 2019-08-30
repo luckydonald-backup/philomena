@@ -17,7 +17,7 @@ defmodule Philomena.Posts.Policy do
   def authorize(:hide, user, _post), do: topic_moderator?(user)
   def authorize(:edit, user, post), do: post.user_id == user.id or topic_moderator?(user)
 
-  def authorize(_action, _user, _topic), do: false
+  def authorize(_action, _user, _post), do: false
 
   defp topic_moderator?(user), do: role?(user, "moderator", "Topic")
 end
