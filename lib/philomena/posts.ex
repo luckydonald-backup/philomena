@@ -8,6 +8,8 @@ defmodule Philomena.Posts do
 
   alias Philomena.Posts.Post
 
+  defdelegate authorize(action, user, params), to: Philomena.Posts.Policy
+
   @doc """
   Returns the list of posts.
 

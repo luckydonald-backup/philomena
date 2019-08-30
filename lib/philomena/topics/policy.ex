@@ -5,8 +5,14 @@ defmodule Philomena.Topics.Policy do
 
   def authorize(_action, %{role: role}, _topic) when role in ~W(admin moderator), do: true
 
-  def authorize(:read, user, topic),
-    do: Bodyguard.permit?(Philomena.Forums, :read, user, topic.forum)
+  def authorize(:read, user, topic) do
+    (topic.hidden_from_users == false or topic_moderator?(user)) and
+      Bodyguard.permit?(Philomena.Forums, :read, user, topic.forum)
+  end
+
+  def authorize(:create, user, topic) do
+    Bodyguard.permit?(Philomena.Forums, :read, user, topic.forum)
+  end
 
   def authorize(:lock, user, _topic), do: topic_moderator?(user)
   def authorize(:stick, user, _topic), do: topic_moderator?(user)
