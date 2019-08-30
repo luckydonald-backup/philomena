@@ -8,6 +8,8 @@ defmodule Philomena.Reports do
 
   alias Philomena.Reports.Report
 
+  defdelegate authorize(action, user, params), to: Philomena.Reports.Policy
+
   @doc """
   Returns the list of reports.
 
