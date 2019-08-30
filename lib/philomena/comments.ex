@@ -8,6 +8,8 @@ defmodule Philomena.Comments do
 
   alias Philomena.Comments.Comment
 
+  defdelegate authorize(action, user, params), to: Philomena.Comments.Policy
+
   @doc """
   Returns the list of comments.
 

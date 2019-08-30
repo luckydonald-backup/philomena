@@ -3,7 +3,7 @@ defmodule Philomena.Comments.Policy do
 
   @behaviour Bodyguard.Policy
 
-  def authorize(_action, %{role: role}, _image) when role in ~W(admin moderator), do: true
+  def authorize(_action, %{role: role}, _comment) when role in ~W(admin moderator), do: true
 
   def authorize(:read, user, comment) do
     (comment.image.hidden_from_users == false and comment.hidden_from_users == false) or

@@ -8,6 +8,8 @@ defmodule Philomena.DuplicateReports do
 
   alias Philomena.DuplicateReports.DuplicateReport
 
+  defdelegate authorize(action, user, params), to: Philomena.DuplicateReports.Policy
+
   @doc """
   Returns the list of duplicate_reports.
 
