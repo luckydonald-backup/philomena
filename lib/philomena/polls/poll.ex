@@ -1,9 +1,9 @@
-defmodule Philomena.Forums.Polls do
+defmodule Philomena.Polls.Poll do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "polls" do
-    belongs_to :topic, Philomena.Forums.Topic
+    belongs_to :topic, Philomena.Topics.Topic
     belongs_to :deleted_by, Philomena.Users.User
 
     field :title, :string
