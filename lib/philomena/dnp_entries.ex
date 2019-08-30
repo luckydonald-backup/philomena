@@ -8,6 +8,8 @@ defmodule Philomena.DnpEntries do
 
   alias Philomena.DnpEntries.DnpEntry
 
+  defdelegate authorize(action, user, params), to: Philomena.DnpEntries.Policy
+
   @doc """
   Returns the list of dnp_entries.
 
