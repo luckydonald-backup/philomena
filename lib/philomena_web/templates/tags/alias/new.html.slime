@@ -1,0 +1,5 @@
+h2 New Alias
+
+= render "form.html", Map.put(assigns, :action, Routes.alias_path(@conn, :create))
+
+= link "Back", to: Routes.tags_alias_path(@conn, :index)

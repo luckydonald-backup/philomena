@@ -1,0 +1,17 @@
+h2 Listing Ratings
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for rating <- @ratings do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.tags_rating_path(@conn, :show, rating), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.tags_rating_path(@conn, :edit, rating), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.tags_rating_path(@conn, :delete, rating), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Rating", to: Routes.tags_rating_path(@conn, :new)

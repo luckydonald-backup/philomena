@@ -1,0 +1,10 @@
+h2 Show Source change
+
+ul
+  li
+    strong Order:&nbsp;
+    = @source_change.order
+
+= link "Edit", to: Routes.ip_profiles_source_change_path(@conn, :edit, @source_change)
+| &nbsp;
+= link "Back", to: Routes.ip_profiles_source_change_path(@conn, :index)

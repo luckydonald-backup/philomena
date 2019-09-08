@@ -1,0 +1,5 @@
+h2 New Watch
+
+= render "form.html", Map.put(assigns, :action, Routes.watch_path(@conn, :create))
+
+= link "Back", to: Routes.tags_watch_path(@conn, :index)

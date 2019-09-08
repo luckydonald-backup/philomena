@@ -1,0 +1,17 @@
+h2 Listing Badge awards
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for badge_award <- @badge_awards do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.profiles_badge_award_path(@conn, :show, badge_award), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.profiles_badge_award_path(@conn, :edit, badge_award), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.profiles_badge_award_path(@conn, :delete, badge_award), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Badge award", to: Routes.profiles_badge_award_path(@conn, :new)

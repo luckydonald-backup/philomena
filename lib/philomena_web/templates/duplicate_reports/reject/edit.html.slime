@@ -1,0 +1,5 @@
+h2 Edit Reject
+
+= render "form.html", Map.put(assigns, :action, Routes.duplicate_reports_reject_path(@conn, :update, @reject))
+
+= link "Back", to: Routes.duplicate_reports_reject_path(@conn, :index)

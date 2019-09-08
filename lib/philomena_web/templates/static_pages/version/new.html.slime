@@ -1,0 +1,5 @@
+h2 New Version
+
+= render "form.html", Map.put(assigns, :action, Routes.version_path(@conn, :create))
+
+= link "Back", to: Routes.static_pages_version_path(@conn, :index)

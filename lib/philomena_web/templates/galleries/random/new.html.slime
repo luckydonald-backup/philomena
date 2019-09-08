@@ -1,0 +1,5 @@
+h2 New Random
+
+= render "form.html", Map.put(assigns, :action, Routes.random_path(@conn, :create))
+
+= link "Back", to: Routes.galleries_random_path(@conn, :index)

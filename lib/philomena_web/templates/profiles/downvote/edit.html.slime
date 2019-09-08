@@ -1,0 +1,5 @@
+h2 Edit Downvote
+
+= render "form.html", Map.put(assigns, :action, Routes.profiles_downvote_path(@conn, :update, @downvote))
+
+= link "Back", to: Routes.profiles_downvote_path(@conn, :index)

@@ -1,0 +1,7 @@
+h2 Show Accept reverse
+
+ul
+
+= link "Edit", to: Routes.duplicate_reports_accept_reverse_path(@conn, :edit, @accept_reverse)
+| &nbsp;
+= link "Back", to: Routes.duplicate_reports_accept_reverse_path(@conn, :index)

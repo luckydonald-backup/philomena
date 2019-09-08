@@ -1,0 +1,17 @@
+h2 Listing Reject
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for reject <- @reject do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.duplicate_reports_reject_path(@conn, :show, reject), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.duplicate_reports_reject_path(@conn, :edit, reject), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.duplicate_reports_reject_path(@conn, :delete, reject), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Reject", to: Routes.duplicate_reports_reject_path(@conn, :new)

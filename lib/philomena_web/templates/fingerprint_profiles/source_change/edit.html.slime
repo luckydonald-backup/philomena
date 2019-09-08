@@ -1,0 +1,5 @@
+h2 Edit Source change
+
+= render "form.html", Map.put(assigns, :action, Routes.fingerprint_profiles_source_change_path(@conn, :update, @source_change))
+
+= link "Back", to: Routes.fingerprint_profiles_source_change_path(@conn, :index)

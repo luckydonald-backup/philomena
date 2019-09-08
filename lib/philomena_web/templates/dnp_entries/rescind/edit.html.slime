@@ -1,0 +1,5 @@
+h2 Edit Rescind
+
+= render "form.html", Map.put(assigns, :action, Routes.dnp_entries_rescind_path(@conn, :update, @rescind))
+
+= link "Back", to: Routes.dnp_entries_rescind_path(@conn, :index)

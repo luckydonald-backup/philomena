@@ -1,0 +1,7 @@
+h2 Show Autocomplete
+
+ul
+
+= link "Edit", to: Routes.tags_autocomplete_path(@conn, :edit, @autocomplete)
+| &nbsp;
+= link "Back", to: Routes.tags_autocomplete_path(@conn, :index)

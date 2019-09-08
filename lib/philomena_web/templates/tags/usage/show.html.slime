@@ -1,0 +1,7 @@
+h2 Show Usage
+
+ul
+
+= link "Edit", to: Routes.tags_usage_path(@conn, :edit, @usage)
+| &nbsp;
+= link "Back", to: Routes.tags_usage_path(@conn, :index)

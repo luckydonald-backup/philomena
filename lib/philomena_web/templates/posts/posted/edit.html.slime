@@ -1,0 +1,5 @@
+h2 Edit Posted
+
+= render "form.html", Map.put(assigns, :action, Routes.posts_posted_path(@conn, :update, @posted))
+
+= link "Back", to: Routes.posts_posted_path(@conn, :index)

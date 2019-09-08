@@ -1,0 +1,7 @@
+h2 Show Accept
+
+ul
+
+= link "Edit", to: Routes.duplicate_reports_accept_path(@conn, :edit, @accept)
+| &nbsp;
+= link "Back", to: Routes.duplicate_reports_accept_path(@conn, :index)

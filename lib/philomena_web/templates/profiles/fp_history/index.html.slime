@@ -1,0 +1,17 @@
+h2 Listing Fp histories
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for fp_history <- @fp_histories do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.profiles_fp_history_path(@conn, :show, fp_history), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.profiles_fp_history_path(@conn, :edit, fp_history), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.profiles_fp_history_path(@conn, :delete, fp_history), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Fp history", to: Routes.profiles_fp_history_path(@conn, :new)

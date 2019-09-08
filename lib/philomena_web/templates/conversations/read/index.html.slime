@@ -1,0 +1,17 @@
+h2 Listing Read
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for read <- @read do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.conversations_read_path(@conn, :show, read), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.conversations_read_path(@conn, :edit, read), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.conversations_read_path(@conn, :delete, read), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Read", to: Routes.conversations_read_path(@conn, :new)

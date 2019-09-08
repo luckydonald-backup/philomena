@@ -1,0 +1,17 @@
+h2 Listing Downvotes
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for downvote <- @downvotes do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.profiles_downvote_path(@conn, :show, downvote), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.profiles_downvote_path(@conn, :edit, downvote), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.profiles_downvote_path(@conn, :delete, downvote), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Downvote", to: Routes.profiles_downvote_path(@conn, :new)

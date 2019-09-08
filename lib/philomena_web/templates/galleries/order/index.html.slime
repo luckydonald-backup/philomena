@@ -1,0 +1,17 @@
+h2 Listing Order
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for order <- @order do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.galleries_order_path(@conn, :show, order), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.galleries_order_path(@conn, :edit, order), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.galleries_order_path(@conn, :delete, order), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Order", to: Routes.galleries_order_path(@conn, :new)

@@ -1,0 +1,17 @@
+h2 Listing Votes and faves
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for vote_and_fave <- @votes_and_faves do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.profiles_vote_and_fave_path(@conn, :show, vote_and_fave), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.profiles_vote_and_fave_path(@conn, :edit, vote_and_fave), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.profiles_vote_and_fave_path(@conn, :delete, vote_and_fave), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Vote and fave", to: Routes.profiles_vote_and_fave_path(@conn, :new)

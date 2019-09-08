@@ -1,0 +1,5 @@
+h2 New Vote and fave
+
+= render "form.html", Map.put(assigns, :action, Routes.vote_and_fave_path(@conn, :create))
+
+= link "Back", to: Routes.profiles_vote_and_fave_path(@conn, :index)

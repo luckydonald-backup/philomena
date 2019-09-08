@@ -1,0 +1,5 @@
+h2 Edit Claim
+
+= render "form.html", Map.put(assigns, :action, Routes.duplicate_reports_claim_path(@conn, :update, @claim))
+
+= link "Back", to: Routes.duplicate_reports_claim_path(@conn, :index)

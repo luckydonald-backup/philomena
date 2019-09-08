@@ -1,0 +1,7 @@
+h2 Show Ip history
+
+ul
+
+= link "Edit", to: Routes.profiles_ip_history_path(@conn, :edit, @ip_history)
+| &nbsp;
+= link "Back", to: Routes.profiles_ip_history_path(@conn, :index)

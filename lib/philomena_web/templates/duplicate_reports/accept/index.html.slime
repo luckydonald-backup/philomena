@@ -1,0 +1,17 @@
+h2 Listing Accept
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for accept <- @accept do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.duplicate_reports_accept_path(@conn, :show, accept), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.duplicate_reports_accept_path(@conn, :edit, accept), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.duplicate_reports_accept_path(@conn, :delete, accept), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Accept", to: Routes.duplicate_reports_accept_path(@conn, :new)

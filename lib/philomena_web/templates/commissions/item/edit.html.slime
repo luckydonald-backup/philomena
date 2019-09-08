@@ -1,0 +1,5 @@
+h2 Edit Item
+
+= render "form.html", Map.put(assigns, :action, Routes.commissions_item_path(@conn, :update, @item))
+
+= link "Back", to: Routes.commissions_item_path(@conn, :index)

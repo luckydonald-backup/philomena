@@ -1,0 +1,17 @@
+h2 Listing Posted
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for posted <- @posted do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.posts_posted_path(@conn, :show, posted), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.posts_posted_path(@conn, :edit, posted), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.posts_posted_path(@conn, :delete, posted), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Posted", to: Routes.posts_posted_path(@conn, :new)

@@ -1,0 +1,7 @@
+h2 Show Alias
+
+ul
+
+= link "Edit", to: Routes.tags_alias_path(@conn, :edit, @alias)
+| &nbsp;
+= link "Back", to: Routes.tags_alias_path(@conn, :index)

@@ -1,0 +1,17 @@
+h2 Listing Hide
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for hide <- @hide do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.conversations_hide_path(@conn, :show, hide), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.conversations_hide_path(@conn, :edit, hide), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.conversations_hide_path(@conn, :delete, hide), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Hide", to: Routes.conversations_hide_path(@conn, :new)

@@ -1,0 +1,7 @@
+h2 Show Hide batch
+
+ul
+
+= link "Edit", to: Routes.conversations_hide_batch_path(@conn, :edit, @hide_batch)
+| &nbsp;
+= link "Back", to: Routes.conversations_hide_batch_path(@conn, :index)

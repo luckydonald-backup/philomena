@@ -1,0 +1,10 @@
+h2 Show Alias
+
+ul
+  li
+    strong Order:&nbsp;
+    = @alias.order
+
+= link "Edit", to: Routes.profiles_alias_path(@conn, :edit, @alias)
+| &nbsp;
+= link "Back", to: Routes.profiles_alias_path(@conn, :index)

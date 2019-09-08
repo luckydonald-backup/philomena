@@ -1,0 +1,5 @@
+h2 Edit Accept
+
+= render "form.html", Map.put(assigns, :action, Routes.duplicate_reports_accept_path(@conn, :update, @accept))
+
+= link "Back", to: Routes.duplicate_reports_accept_path(@conn, :index)

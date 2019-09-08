@@ -1,0 +1,5 @@
+h2 New Autocomplete
+
+= render "form.html", Map.put(assigns, :action, Routes.autocomplete_path(@conn, :create))
+
+= link "Back", to: Routes.tags_autocomplete_path(@conn, :index)

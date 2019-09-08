@@ -1,0 +1,17 @@
+h2 Listing Hide batch
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for hide_batch <- @hide_batch do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.conversations_hide_batch_path(@conn, :show, hide_batch), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.conversations_hide_batch_path(@conn, :edit, hide_batch), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.conversations_hide_batch_path(@conn, :delete, hide_batch), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Hide batch", to: Routes.conversations_hide_batch_path(@conn, :new)

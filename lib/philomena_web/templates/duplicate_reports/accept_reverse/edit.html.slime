@@ -1,0 +1,5 @@
+h2 Edit Accept reverse
+
+= render "form.html", Map.put(assigns, :action, Routes.duplicate_reports_accept_reverse_path(@conn, :update, @accept_reverse))
+
+= link "Back", to: Routes.duplicate_reports_accept_reverse_path(@conn, :index)

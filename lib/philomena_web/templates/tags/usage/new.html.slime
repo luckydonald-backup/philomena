@@ -1,0 +1,5 @@
+h2 New Usage
+
+= render "form.html", Map.put(assigns, :action, Routes.usage_path(@conn, :create))
+
+= link "Back", to: Routes.tags_usage_path(@conn, :index)

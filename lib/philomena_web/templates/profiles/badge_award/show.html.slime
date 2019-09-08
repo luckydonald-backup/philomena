@@ -1,0 +1,7 @@
+h2 Show Badge award
+
+ul
+
+= link "Edit", to: Routes.profiles_badge_award_path(@conn, :edit, @badge_award)
+| &nbsp;
+= link "Back", to: Routes.profiles_badge_award_path(@conn, :index)

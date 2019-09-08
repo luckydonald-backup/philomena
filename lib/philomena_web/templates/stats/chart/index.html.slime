@@ -1,0 +1,17 @@
+h2 Listing Chart
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for chart <- @chart do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.stats_chart_path(@conn, :show, chart), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.stats_chart_path(@conn, :edit, chart), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.stats_chart_path(@conn, :delete, chart), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Chart", to: Routes.stats_chart_path(@conn, :new)

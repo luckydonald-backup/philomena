@@ -1,0 +1,7 @@
+h2 Show Fp history
+
+ul
+
+= link "Edit", to: Routes.profiles_fp_history_path(@conn, :edit, @fp_history)
+| &nbsp;
+= link "Back", to: Routes.profiles_fp_history_path(@conn, :index)

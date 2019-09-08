@@ -1,0 +1,7 @@
+h2 Show Random
+
+ul
+
+= link "Edit", to: Routes.galleries_random_path(@conn, :edit, @random)
+| &nbsp;
+= link "Back", to: Routes.galleries_random_path(@conn, :index)

@@ -1,0 +1,7 @@
+h2 Show Detail
+
+ul
+
+= link "Edit", to: Routes.profiles_detail_path(@conn, :edit, @detail)
+| &nbsp;
+= link "Back", to: Routes.profiles_detail_path(@conn, :index)

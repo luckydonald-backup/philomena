@@ -1,0 +1,5 @@
+h2 Edit Badge award
+
+= render "form.html", Map.put(assigns, :action, Routes.profiles_badge_award_path(@conn, :update, @badge_award))
+
+= link "Back", to: Routes.profiles_badge_award_path(@conn, :index)

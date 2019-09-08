@@ -1,0 +1,5 @@
+h2 New Hide batch
+
+= render "form.html", Map.put(assigns, :action, Routes.hide_batch_path(@conn, :create))
+
+= link "Back", to: Routes.conversations_hide_batch_path(@conn, :index)

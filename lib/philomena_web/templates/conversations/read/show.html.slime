@@ -1,0 +1,7 @@
+h2 Show Read
+
+ul
+
+= link "Edit", to: Routes.conversations_read_path(@conn, :edit, @read)
+| &nbsp;
+= link "Back", to: Routes.conversations_read_path(@conn, :index)

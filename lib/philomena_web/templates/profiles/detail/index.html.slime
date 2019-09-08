@@ -1,0 +1,17 @@
+h2 Listing Details
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for detail <- @details do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.profiles_detail_path(@conn, :show, detail), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.profiles_detail_path(@conn, :edit, detail), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.profiles_detail_path(@conn, :delete, detail), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Detail", to: Routes.profiles_detail_path(@conn, :new)

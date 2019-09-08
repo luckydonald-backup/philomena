@@ -1,0 +1,17 @@
+h2 Listing Autocomplete
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for autocomplete <- @autocomplete do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.tags_autocomplete_path(@conn, :show, autocomplete), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.tags_autocomplete_path(@conn, :edit, autocomplete), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.tags_autocomplete_path(@conn, :delete, autocomplete), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Autocomplete", to: Routes.tags_autocomplete_path(@conn, :new)

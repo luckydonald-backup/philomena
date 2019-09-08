@@ -1,0 +1,17 @@
+h2 Listing Rescinds
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for rescind <- @rescinds do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.dnp_entries_rescind_path(@conn, :show, rescind), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.dnp_entries_rescind_path(@conn, :edit, rescind), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.dnp_entries_rescind_path(@conn, :delete, rescind), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Rescind", to: Routes.dnp_entries_rescind_path(@conn, :new)

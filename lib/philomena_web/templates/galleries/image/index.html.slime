@@ -1,0 +1,17 @@
+h2 Listing Images
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for image <- @images do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.galleries_image_path(@conn, :show, image), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.galleries_image_path(@conn, :edit, image), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.galleries_image_path(@conn, :delete, image), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Image", to: Routes.galleries_image_path(@conn, :new)

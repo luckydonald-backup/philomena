@@ -1,0 +1,5 @@
+h2 Edit Fp history
+
+= render "form.html", Map.put(assigns, :action, Routes.profiles_fp_history_path(@conn, :update, @fp_history))
+
+= link "Back", to: Routes.profiles_fp_history_path(@conn, :index)

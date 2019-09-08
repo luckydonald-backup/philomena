@@ -1,0 +1,7 @@
+h2 Show Downvote
+
+ul
+
+= link "Edit", to: Routes.profiles_downvote_path(@conn, :edit, @downvote)
+| &nbsp;
+= link "Back", to: Routes.profiles_downvote_path(@conn, :index)

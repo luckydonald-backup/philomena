@@ -1,0 +1,7 @@
+h2 Show Reject
+
+ul
+
+= link "Edit", to: Routes.duplicate_reports_reject_path(@conn, :edit, @reject)
+| &nbsp;
+= link "Back", to: Routes.duplicate_reports_reject_path(@conn, :index)

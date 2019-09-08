@@ -1,0 +1,17 @@
+h2 Listing Watches
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for watch <- @watches do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.tags_watch_path(@conn, :show, watch), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.tags_watch_path(@conn, :edit, watch), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.tags_watch_path(@conn, :delete, watch), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Watch", to: Routes.tags_watch_path(@conn, :new)

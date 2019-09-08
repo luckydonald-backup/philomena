@@ -1,0 +1,5 @@
+h2 New Detail
+
+= render "form.html", Map.put(assigns, :action, Routes.detail_path(@conn, :create))
+
+= link "Back", to: Routes.profiles_detail_path(@conn, :index)

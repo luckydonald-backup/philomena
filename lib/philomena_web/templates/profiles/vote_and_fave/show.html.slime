@@ -1,0 +1,7 @@
+h2 Show Vote and fave
+
+ul
+
+= link "Edit", to: Routes.profiles_vote_and_fave_path(@conn, :edit, @vote_and_fave)
+| &nbsp;
+= link "Back", to: Routes.profiles_vote_and_fave_path(@conn, :index)

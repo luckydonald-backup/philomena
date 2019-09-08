@@ -1,0 +1,7 @@
+h2 Show Tag change
+
+ul
+
+= link "Edit", to: Routes.profiles_tag_change_path(@conn, :edit, @tag_change)
+| &nbsp;
+= link "Back", to: Routes.profiles_tag_change_path(@conn, :index)

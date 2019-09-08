@@ -1,0 +1,7 @@
+h2 Show Rescind
+
+ul
+
+= link "Edit", to: Routes.dnp_entries_rescind_path(@conn, :edit, @rescind)
+| &nbsp;
+= link "Back", to: Routes.dnp_entries_rescind_path(@conn, :index)

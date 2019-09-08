@@ -1,0 +1,17 @@
+h2 Listing Random
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for random <- @random do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.galleries_random_path(@conn, :show, random), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.galleries_random_path(@conn, :edit, random), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.galleries_random_path(@conn, :delete, random), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Random", to: Routes.galleries_random_path(@conn, :new)

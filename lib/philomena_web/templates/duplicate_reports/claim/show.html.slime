@@ -1,0 +1,7 @@
+h2 Show Claim
+
+ul
+
+= link "Edit", to: Routes.duplicate_reports_claim_path(@conn, :edit, @claim)
+| &nbsp;
+= link "Back", to: Routes.duplicate_reports_claim_path(@conn, :index)

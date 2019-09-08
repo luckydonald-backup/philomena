@@ -1,0 +1,7 @@
+h2 Show Item
+
+ul
+
+= link "Edit", to: Routes.commissions_item_path(@conn, :edit, @item)
+| &nbsp;
+= link "Back", to: Routes.commissions_item_path(@conn, :index)

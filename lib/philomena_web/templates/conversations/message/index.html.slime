@@ -1,0 +1,17 @@
+h2 Listing Messages
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for message <- @messages do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.conversations_message_path(@conn, :show, message), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.conversations_message_path(@conn, :edit, message), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.conversations_message_path(@conn, :delete, message), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Message", to: Routes.conversations_message_path(@conn, :new)

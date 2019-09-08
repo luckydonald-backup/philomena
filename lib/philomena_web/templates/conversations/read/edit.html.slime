@@ -1,0 +1,5 @@
+h2 Edit Read
+
+= render "form.html", Map.put(assigns, :action, Routes.conversations_read_path(@conn, :update, @read))
+
+= link "Back", to: Routes.conversations_read_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 Edit Scratchpad
+
+= render "form.html", Map.put(assigns, :action, Routes.profiles_scratchpad_path(@conn, :update, @scratchpad))
+
+= link "Back", to: Routes.profiles_scratchpad_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 Edit Chart
+
+= render "form.html", Map.put(assigns, :action, Routes.stats_chart_path(@conn, :update, @chart))
+
+= link "Back", to: Routes.stats_chart_path(@conn, :index)

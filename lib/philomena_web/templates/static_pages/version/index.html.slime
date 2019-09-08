@@ -1,0 +1,17 @@
+h2 Listing Static page versions
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for version <- @static_page_versions do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.static_pages_version_path(@conn, :show, version), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.static_pages_version_path(@conn, :edit, version), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.static_pages_version_path(@conn, :delete, version), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Version", to: Routes.static_pages_version_path(@conn, :new)

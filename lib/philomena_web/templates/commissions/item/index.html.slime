@@ -1,0 +1,17 @@
+h2 Listing Commission items
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for item <- @commission_items do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.commissions_item_path(@conn, :show, item), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.commissions_item_path(@conn, :edit, item), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.commissions_item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Item", to: Routes.commissions_item_path(@conn, :new)

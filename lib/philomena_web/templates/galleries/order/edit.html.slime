@@ -1,0 +1,5 @@
+h2 Edit Order
+
+= render "form.html", Map.put(assigns, :action, Routes.galleries_order_path(@conn, :update, @order))
+
+= link "Back", to: Routes.galleries_order_path(@conn, :index)

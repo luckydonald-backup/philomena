@@ -1,0 +1,17 @@
+h2 Listing Usage
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for usage <- @usage do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.tags_usage_path(@conn, :show, usage), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.tags_usage_path(@conn, :edit, usage), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.tags_usage_path(@conn, :delete, usage), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Usage", to: Routes.tags_usage_path(@conn, :new)

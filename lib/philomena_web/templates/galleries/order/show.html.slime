@@ -1,0 +1,7 @@
+h2 Show Order
+
+ul
+
+= link "Edit", to: Routes.galleries_order_path(@conn, :edit, @order)
+| &nbsp;
+= link "Back", to: Routes.galleries_order_path(@conn, :index)

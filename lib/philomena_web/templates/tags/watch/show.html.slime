@@ -1,0 +1,7 @@
+h2 Show Watch
+
+ul
+
+= link "Edit", to: Routes.tags_watch_path(@conn, :edit, @watch)
+| &nbsp;
+= link "Back", to: Routes.tags_watch_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 New Rating
+
+= render "form.html", Map.put(assigns, :action, Routes.rating_path(@conn, :create))
+
+= link "Back", to: Routes.tags_rating_path(@conn, :index)

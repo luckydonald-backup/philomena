@@ -1,0 +1,7 @@
+h2 Show Chart
+
+ul
+
+= link "Edit", to: Routes.stats_chart_path(@conn, :edit, @chart)
+| &nbsp;
+= link "Back", to: Routes.stats_chart_path(@conn, :index)

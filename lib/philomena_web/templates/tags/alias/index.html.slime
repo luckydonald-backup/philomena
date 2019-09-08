@@ -1,0 +1,17 @@
+h2 Listing Aliases
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for alias <- @aliases do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.tags_alias_path(@conn, :show, alias), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.tags_alias_path(@conn, :edit, alias), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.tags_alias_path(@conn, :delete, alias), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Alias", to: Routes.tags_alias_path(@conn, :new)

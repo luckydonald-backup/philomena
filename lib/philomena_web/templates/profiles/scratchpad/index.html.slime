@@ -1,0 +1,17 @@
+h2 Listing Scratchpads
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for scratchpad <- @scratchpads do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.profiles_scratchpad_path(@conn, :show, scratchpad), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.profiles_scratchpad_path(@conn, :edit, scratchpad), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.profiles_scratchpad_path(@conn, :delete, scratchpad), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Scratchpad", to: Routes.profiles_scratchpad_path(@conn, :new)

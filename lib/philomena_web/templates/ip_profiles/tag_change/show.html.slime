@@ -1,0 +1,10 @@
+h2 Show Tag change
+
+ul
+  li
+    strong Order:&nbsp;
+    = @tag_change.order
+
+= link "Edit", to: Routes.ip_profiles_tag_change_path(@conn, :edit, @tag_change)
+| &nbsp;
+= link "Back", to: Routes.ip_profiles_tag_change_path(@conn, :index)

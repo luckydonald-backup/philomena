@@ -1,0 +1,17 @@
+h2 Listing Accept reverse
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for accept_reverse <- @accept_reverse do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.duplicate_reports_accept_reverse_path(@conn, :show, accept_reverse), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.duplicate_reports_accept_reverse_path(@conn, :edit, accept_reverse), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.duplicate_reports_accept_reverse_path(@conn, :delete, accept_reverse), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Accept reverse", to: Routes.duplicate_reports_accept_reverse_path(@conn, :new)
