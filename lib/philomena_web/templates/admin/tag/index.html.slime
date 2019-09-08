@@ -1,0 +1,17 @@
+h2 Listing Tags
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for tag <- @tags do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_tag_path(@conn, :show, tag), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_tag_path(@conn, :edit, tag), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_tag_path(@conn, :delete, tag), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Tag", to: Routes.admin_tag_path(@conn, :new)

@@ -1,0 +1,5 @@
+h2 Edit Donation
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_donation_path(@conn, :update, @donation))
+
+= link "Back", to: Routes.admin_donation_path(@conn, :index)

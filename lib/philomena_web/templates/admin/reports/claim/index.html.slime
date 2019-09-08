@@ -1,0 +1,17 @@
+h2 Listing Reports
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for claim <- @reports do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_reports_claim_path(@conn, :show, claim), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_reports_claim_path(@conn, :edit, claim), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_reports_claim_path(@conn, :delete, claim), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Claim", to: Routes.admin_reports_claim_path(@conn, :new)

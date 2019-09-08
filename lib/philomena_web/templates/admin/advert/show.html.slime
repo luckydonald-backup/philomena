@@ -1,0 +1,7 @@
+h2 Show Advert
+
+ul
+
+= link "Edit", to: Routes.admin_advert_path(@conn, :edit, @advert)
+| &nbsp;
+= link "Back", to: Routes.admin_advert_path(@conn, :index)

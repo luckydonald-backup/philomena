@@ -1,0 +1,7 @@
+h2 Show Forum
+
+ul
+
+= link "Edit", to: Routes.admin_forum_path(@conn, :edit, @forum)
+| &nbsp;
+= link "Back", to: Routes.admin_forum_path(@conn, :index)

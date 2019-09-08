@@ -1,0 +1,5 @@
+h2 Edit Close
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_reports_close_path(@conn, :update, @close))
+
+= link "Back", to: Routes.admin_reports_close_path(@conn, :index)

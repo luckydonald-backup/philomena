@@ -1,0 +1,5 @@
+h2 Edit Activation
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_users_activation_path(@conn, :update, @activation))
+
+= link "Back", to: Routes.admin_users_activation_path(@conn, :index)

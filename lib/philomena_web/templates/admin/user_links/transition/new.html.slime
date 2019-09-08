@@ -1,0 +1,5 @@
+h2 New Transition
+
+= render "form.html", Map.put(assigns, :action, Routes.transition_path(@conn, :create))
+
+= link "Back", to: Routes.admin_user_links_transition_path(@conn, :index)

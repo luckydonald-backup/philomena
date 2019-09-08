@@ -1,0 +1,7 @@
+h2 Show Claim
+
+ul
+
+= link "Edit", to: Routes.admin_reports_claim_path(@conn, :edit, @claim)
+| &nbsp;
+= link "Back", to: Routes.admin_reports_claim_path(@conn, :index)

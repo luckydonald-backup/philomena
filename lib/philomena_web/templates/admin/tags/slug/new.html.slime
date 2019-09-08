@@ -1,0 +1,5 @@
+h2 New Slug
+
+= render "form.html", Map.put(assigns, :action, Routes.slug_path(@conn, :create))
+
+= link "Back", to: Routes.admin_tags_slug_path(@conn, :index)

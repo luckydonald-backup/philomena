@@ -1,0 +1,5 @@
+h2 Edit Whitelist
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_whitelist_path(@conn, :update, @whitelist))
+
+= link "Back", to: Routes.admin_whitelist_path(@conn, :index)

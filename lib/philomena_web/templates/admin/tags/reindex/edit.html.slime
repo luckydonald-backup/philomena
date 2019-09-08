@@ -1,0 +1,5 @@
+h2 Edit Reindex
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_tags_reindex_path(@conn, :update, @reindex))
+
+= link "Back", to: Routes.admin_tags_reindex_path(@conn, :index)

@@ -1,0 +1,17 @@
+h2 Listing Subnet bans
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for subnet <- @subnet_bans do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_subnet_path(@conn, :show, subnet), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_subnet_path(@conn, :edit, subnet), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_subnet_path(@conn, :delete, subnet), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Subnet", to: Routes.admin_subnet_path(@conn, :new)

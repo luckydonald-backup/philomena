@@ -1,0 +1,7 @@
+h2 Show Subnet
+
+ul
+
+= link "Edit", to: Routes.admin_subnet_path(@conn, :edit, @subnet)
+| &nbsp;
+= link "Back", to: Routes.admin_subnet_path(@conn, :index)

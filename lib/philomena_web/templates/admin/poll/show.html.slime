@@ -1,0 +1,7 @@
+h2 Show Poll
+
+ul
+
+= link "Edit", to: Routes.admin_poll_path(@conn, :edit, @poll)
+| &nbsp;
+= link "Back", to: Routes.admin_poll_path(@conn, :index)

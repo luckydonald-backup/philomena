@@ -1,0 +1,5 @@
+h2 Edit Tag
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_batch_tag_path(@conn, :update, @tag))
+
+= link "Back", to: Routes.admin_batch_tag_path(@conn, :index)

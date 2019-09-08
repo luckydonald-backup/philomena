@@ -1,0 +1,7 @@
+h2 Show Api key
+
+ul
+
+= link "Edit", to: Routes.admin_users_api_key_path(@conn, :edit, @api_key)
+| &nbsp;
+= link "Back", to: Routes.admin_users_api_key_path(@conn, :index)

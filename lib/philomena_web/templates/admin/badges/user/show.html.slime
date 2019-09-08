@@ -1,0 +1,7 @@
+h2 Show User
+
+ul
+
+= link "Edit", to: Routes.admin_badges_user_path(@conn, :edit, @user)
+| &nbsp;
+= link "Back", to: Routes.admin_badges_user_path(@conn, :index)

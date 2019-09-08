@@ -1,0 +1,7 @@
+h2 Show Whitelist
+
+ul
+
+= link "Edit", to: Routes.admin_whitelist_path(@conn, :edit, @whitelist)
+| &nbsp;
+= link "Back", to: Routes.admin_whitelist_path(@conn, :index)

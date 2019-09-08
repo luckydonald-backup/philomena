@@ -1,0 +1,7 @@
+h2 Show Activation
+
+ul
+
+= link "Edit", to: Routes.admin_users_activation_path(@conn, :edit, @activation)
+| &nbsp;
+= link "Back", to: Routes.admin_users_activation_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 New Site notice
+
+= render "form.html", Map.put(assigns, :action, Routes.site_notice_path(@conn, :create))
+
+= link "Back", to: Routes.admin_site_notice_path(@conn, :index)

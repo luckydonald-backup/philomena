@@ -1,0 +1,17 @@
+h2 Listing Tags
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for reindex <- @tags do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_tags_reindex_path(@conn, :show, reindex), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_tags_reindex_path(@conn, :edit, reindex), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_tags_reindex_path(@conn, :delete, reindex), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Reindex", to: Routes.admin_tags_reindex_path(@conn, :new)

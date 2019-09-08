@@ -1,0 +1,7 @@
+h2 Show Site notice
+
+ul
+
+= link "Edit", to: Routes.admin_site_notice_path(@conn, :edit, @site_notice)
+| &nbsp;
+= link "Back", to: Routes.admin_site_notice_path(@conn, :index)

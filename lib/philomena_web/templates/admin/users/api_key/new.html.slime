@@ -1,0 +1,5 @@
+h2 New Api key
+
+= render "form.html", Map.put(assigns, :action, Routes.api_key_path(@conn, :create))
+
+= link "Back", to: Routes.admin_users_api_key_path(@conn, :index)

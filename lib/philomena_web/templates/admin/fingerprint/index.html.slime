@@ -1,0 +1,17 @@
+h2 Listing Fingerprint bans
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for fingerprint <- @fingerprint_bans do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_fingerprint_path(@conn, :show, fingerprint), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_fingerprint_path(@conn, :edit, fingerprint), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_fingerprint_path(@conn, :delete, fingerprint), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Fingerprint", to: Routes.admin_fingerprint_path(@conn, :new)

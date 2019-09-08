@@ -1,0 +1,17 @@
+h2 Listing Users
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for user <- @users do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_donations_user_path(@conn, :show, user), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_donations_user_path(@conn, :edit, user), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_donations_user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New User", to: Routes.admin_donations_user_path(@conn, :new)

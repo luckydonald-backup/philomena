@@ -1,0 +1,17 @@
+h2 Listing Users
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for api_key <- @users do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_users_api_key_path(@conn, :show, api_key), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_users_api_key_path(@conn, :edit, api_key), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_users_api_key_path(@conn, :delete, api_key), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Api key", to: Routes.admin_users_api_key_path(@conn, :new)

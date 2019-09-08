@@ -1,0 +1,17 @@
+h2 Listing User links
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for transition <- @user_links do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_user_links_transition_path(@conn, :show, transition), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_user_links_transition_path(@conn, :edit, transition), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_user_links_transition_path(@conn, :delete, transition), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Transition", to: Routes.admin_user_links_transition_path(@conn, :new)

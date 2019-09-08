@@ -1,0 +1,17 @@
+h2 Listing Donations
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for donation <- @donations do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_donation_path(@conn, :show, donation), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_donation_path(@conn, :edit, donation), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_donation_path(@conn, :delete, donation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Donation", to: Routes.admin_donation_path(@conn, :new)

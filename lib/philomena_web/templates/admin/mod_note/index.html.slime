@@ -1,0 +1,17 @@
+h2 Listing Mod notes
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for mod_note <- @mod_notes do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_mod_note_path(@conn, :show, mod_note), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_mod_note_path(@conn, :edit, mod_note), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_mod_note_path(@conn, :delete, mod_note), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Mod note", to: Routes.admin_mod_note_path(@conn, :new)

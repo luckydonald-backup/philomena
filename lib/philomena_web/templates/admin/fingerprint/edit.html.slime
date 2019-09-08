@@ -1,0 +1,5 @@
+h2 Edit Fingerprint
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_fingerprint_path(@conn, :update, @fingerprint))
+
+= link "Back", to: Routes.admin_fingerprint_path(@conn, :index)

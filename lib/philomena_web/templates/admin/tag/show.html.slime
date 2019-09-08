@@ -1,0 +1,7 @@
+h2 Show Tag
+
+ul
+
+= link "Edit", to: Routes.admin_tag_path(@conn, :edit, @tag)
+| &nbsp;
+= link "Back", to: Routes.admin_tag_path(@conn, :index)

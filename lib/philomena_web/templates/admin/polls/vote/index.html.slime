@@ -1,0 +1,17 @@
+h2 Listing Poll votes
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for vote <- @poll_votes do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_polls_vote_path(@conn, :show, vote), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_polls_vote_path(@conn, :edit, vote), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_polls_vote_path(@conn, :delete, vote), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Vote", to: Routes.admin_polls_vote_path(@conn, :new)

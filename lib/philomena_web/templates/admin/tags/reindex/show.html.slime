@@ -1,0 +1,7 @@
+h2 Show Reindex
+
+ul
+
+= link "Edit", to: Routes.admin_tags_reindex_path(@conn, :edit, @reindex)
+| &nbsp;
+= link "Back", to: Routes.admin_tags_reindex_path(@conn, :index)

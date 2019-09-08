@@ -1,0 +1,17 @@
+h2 Listing Site notices
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for site_notice <- @site_notices do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_site_notice_path(@conn, :show, site_notice), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_site_notice_path(@conn, :edit, site_notice), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_site_notice_path(@conn, :delete, site_notice), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Site notice", to: Routes.admin_site_notice_path(@conn, :new)

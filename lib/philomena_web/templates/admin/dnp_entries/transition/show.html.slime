@@ -1,0 +1,7 @@
+h2 Show Transition
+
+ul
+
+= link "Edit", to: Routes.admin_dnp_entries_transition_path(@conn, :edit, @transition)
+| &nbsp;
+= link "Back", to: Routes.admin_dnp_entries_transition_path(@conn, :index)

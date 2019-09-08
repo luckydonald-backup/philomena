@@ -1,0 +1,5 @@
+h2 Edit User
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_user_path(@conn, :update, @user))
+
+= link "Back", to: Routes.admin_user_path(@conn, :index)

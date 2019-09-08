@@ -1,0 +1,17 @@
+h2 Listing Users
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for wipe <- @users do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_users_wipe_path(@conn, :show, wipe), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_users_wipe_path(@conn, :edit, wipe), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_users_wipe_path(@conn, :delete, wipe), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Wipe", to: Routes.admin_users_wipe_path(@conn, :new)

@@ -1,0 +1,17 @@
+h2 Listing Badges
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for badge <- @badges do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.admin_badge_path(@conn, :show, badge), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.admin_badge_path(@conn, :edit, badge), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.admin_badge_path(@conn, :delete, badge), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Badge", to: Routes.admin_badge_path(@conn, :new)

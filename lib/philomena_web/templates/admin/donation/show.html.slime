@@ -1,0 +1,7 @@
+h2 Show Donation
+
+ul
+
+= link "Edit", to: Routes.admin_donation_path(@conn, :edit, @donation)
+| &nbsp;
+= link "Back", to: Routes.admin_donation_path(@conn, :index)

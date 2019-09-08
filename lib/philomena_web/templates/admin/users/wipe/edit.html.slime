@@ -1,0 +1,5 @@
+h2 Edit Wipe
+
+= render "form.html", Map.put(assigns, :action, Routes.admin_users_wipe_path(@conn, :update, @wipe))
+
+= link "Back", to: Routes.admin_users_wipe_path(@conn, :index)

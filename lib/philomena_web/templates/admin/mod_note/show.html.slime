@@ -1,0 +1,7 @@
+h2 Show Mod note
+
+ul
+
+= link "Edit", to: Routes.admin_mod_note_path(@conn, :edit, @mod_note)
+| &nbsp;
+= link "Back", to: Routes.admin_mod_note_path(@conn, :index)

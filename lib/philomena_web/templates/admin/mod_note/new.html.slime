@@ -1,0 +1,5 @@
+h2 New Mod note
+
+= render "form.html", Map.put(assigns, :action, Routes.mod_note_path(@conn, :create))
+
+= link "Back", to: Routes.admin_mod_note_path(@conn, :index)

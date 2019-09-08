@@ -1,0 +1,7 @@
+h2 Show Wipe
+
+ul
+
+= link "Edit", to: Routes.admin_users_wipe_path(@conn, :edit, @wipe)
+| &nbsp;
+= link "Back", to: Routes.admin_users_wipe_path(@conn, :index)
