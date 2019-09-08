@@ -1,0 +1,5 @@
+h2 Edit Poll vote
+
+= render "form.html", Map.put(assigns, :action, Routes.poll_vote_path(@conn, :update, @poll_vote))
+
+= link "Back", to: Routes.poll_vote_path(@conn, :index)

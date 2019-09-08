@@ -1,0 +1,5 @@
+h2 Edit Notification
+
+= render "form.html", Map.put(assigns, :action, Routes.notification_path(@conn, :update, @notification))
+
+= link "Back", to: Routes.notification_path(@conn, :index)

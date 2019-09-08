@@ -1,0 +1,5 @@
+h2 Edit Spoiler type
+
+= render "form.html", Map.put(assigns, :action, Routes.spoiler_type_path(@conn, :update, @spoiler_type))
+
+= link "Back", to: Routes.spoiler_type_path(@conn, :index)

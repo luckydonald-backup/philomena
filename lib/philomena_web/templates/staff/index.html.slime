@@ -1,0 +1,17 @@
+h2 Listing Staff
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for staff <- @staff do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.staff_path(@conn, :show, staff), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.staff_path(@conn, :edit, staff), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.staff_path(@conn, :delete, staff), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Staff", to: Routes.staff_path(@conn, :new)

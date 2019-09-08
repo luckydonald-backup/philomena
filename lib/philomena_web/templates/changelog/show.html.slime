@@ -1,0 +1,7 @@
+h2 Show Changelog
+
+ul
+
+= link "Edit", to: Routes.changelog_path(@conn, :edit, @changelog)
+| &nbsp;
+= link "Back", to: Routes.changelog_path(@conn, :index)

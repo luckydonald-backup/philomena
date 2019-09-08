@@ -1,0 +1,17 @@
+h2 Listing Captchas
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for captcha <- @captchas do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.captcha_path(@conn, :show, captcha), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.captcha_path(@conn, :edit, captcha), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.captcha_path(@conn, :delete, captcha), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Captcha", to: Routes.captcha_path(@conn, :new)

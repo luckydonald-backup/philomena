@@ -1,0 +1,7 @@
+h2 Show Gallery
+
+ul
+
+= link "Edit", to: Routes.gallery_path(@conn, :edit, @gallery)
+| &nbsp;
+= link "Back", to: Routes.gallery_path(@conn, :index)

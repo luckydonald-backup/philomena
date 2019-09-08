@@ -1,0 +1,7 @@
+h2 Show Ip profile
+
+ul
+
+= link "Edit", to: Routes.ip_profile_path(@conn, :edit, @ip_profile)
+| &nbsp;
+= link "Back", to: Routes.ip_profile_path(@conn, :index)

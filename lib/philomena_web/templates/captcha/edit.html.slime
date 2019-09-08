@@ -1,0 +1,5 @@
+h2 Edit Captcha
+
+= render "form.html", Map.put(assigns, :action, Routes.captcha_path(@conn, :update, @captcha))
+
+= link "Back", to: Routes.captcha_path(@conn, :index)

@@ -1,0 +1,7 @@
+h2 Show Conversation
+
+ul
+
+= link "Edit", to: Routes.conversation_path(@conn, :edit, @conversation)
+| &nbsp;
+= link "Back", to: Routes.conversation_path(@conn, :index)

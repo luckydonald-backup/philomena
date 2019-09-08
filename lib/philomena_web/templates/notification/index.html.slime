@@ -1,0 +1,17 @@
+h2 Listing Notifications
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for notification <- @notifications do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.notification_path(@conn, :show, notification), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.notification_path(@conn, :edit, notification), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.notification_path(@conn, :delete, notification), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Notification", to: Routes.notification_path(@conn, :new)

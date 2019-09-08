@@ -1,0 +1,7 @@
+h2 Show Comment
+
+ul
+
+= link "Edit", to: Routes.comment_path(@conn, :edit, @comment)
+| &nbsp;
+= link "Back", to: Routes.comment_path(@conn, :index)

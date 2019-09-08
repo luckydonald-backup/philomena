@@ -1,0 +1,7 @@
+h2 Show Captcha
+
+ul
+
+= link "Edit", to: Routes.captcha_path(@conn, :edit, @captcha)
+| &nbsp;
+= link "Back", to: Routes.captcha_path(@conn, :index)

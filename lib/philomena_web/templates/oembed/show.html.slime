@@ -1,0 +1,7 @@
+h2 Show Oembed
+
+ul
+
+= link "Edit", to: Routes.oembed_path(@conn, :edit, @oembed)
+| &nbsp;
+= link "Back", to: Routes.oembed_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 Edit Stat
+
+= render "form.html", Map.put(assigns, :action, Routes.stat_path(@conn, :update, @stat))
+
+= link "Back", to: Routes.stat_path(@conn, :index)

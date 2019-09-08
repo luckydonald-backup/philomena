@@ -1,0 +1,5 @@
+h2 Edit Commission
+
+= render "form.html", Map.put(assigns, :action, Routes.commission_path(@conn, :update, @commission))
+
+= link "Back", to: Routes.commission_path(@conn, :index)

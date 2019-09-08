@@ -1,0 +1,7 @@
+h2 Show Report
+
+ul
+
+= link "Edit", to: Routes.report_path(@conn, :edit, @report)
+| &nbsp;
+= link "Back", to: Routes.report_path(@conn, :index)

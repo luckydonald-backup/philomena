@@ -1,0 +1,17 @@
+h2 Listing Filters
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for filter <- @filters do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.filter_path(@conn, :show, filter), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.filter_path(@conn, :edit, filter), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.filter_path(@conn, :delete, filter), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Filter", to: Routes.filter_path(@conn, :new)

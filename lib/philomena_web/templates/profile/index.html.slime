@@ -1,0 +1,17 @@
+h2 Listing Profiles
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for profile <- @profiles do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.profile_path(@conn, :show, profile), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.profile_path(@conn, :edit, profile), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.profile_path(@conn, :delete, profile), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Profile", to: Routes.profile_path(@conn, :new)

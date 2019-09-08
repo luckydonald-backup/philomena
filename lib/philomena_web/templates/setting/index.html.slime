@@ -1,0 +1,17 @@
+h2 Listing Settings
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for setting <- @settings do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.setting_path(@conn, :show, setting), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.setting_path(@conn, :edit, setting), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.setting_path(@conn, :delete, setting), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Setting", to: Routes.setting_path(@conn, :new)

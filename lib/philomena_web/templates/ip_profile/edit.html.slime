@@ -1,0 +1,5 @@
+h2 Edit Ip profile
+
+= render "form.html", Map.put(assigns, :action, Routes.ip_profile_path(@conn, :update, @ip_profile))
+
+= link "Back", to: Routes.ip_profile_path(@conn, :index)

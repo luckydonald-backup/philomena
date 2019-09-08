@@ -1,0 +1,5 @@
+h2 New Setting
+
+= render "form.html", Map.put(assigns, :action, Routes.setting_path(@conn, :create))
+
+= link "Back", to: Routes.setting_path(@conn, :index)

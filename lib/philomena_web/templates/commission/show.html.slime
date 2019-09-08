@@ -1,0 +1,7 @@
+h2 Show Commission
+
+ul
+
+= link "Edit", to: Routes.commission_path(@conn, :edit, @commission)
+| &nbsp;
+= link "Back", to: Routes.commission_path(@conn, :index)

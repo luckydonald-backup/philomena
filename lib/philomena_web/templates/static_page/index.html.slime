@@ -1,0 +1,17 @@
+h2 Listing Static pages
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for static_page <- @static_pages do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.static_page_path(@conn, :show, static_page), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.static_page_path(@conn, :edit, static_page), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.static_page_path(@conn, :delete, static_page), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Static page", to: Routes.static_page_path(@conn, :new)

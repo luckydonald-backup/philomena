@@ -1,0 +1,5 @@
+h2 New User link
+
+= render "form.html", Map.put(assigns, :action, Routes.user_link_path(@conn, :create))
+
+= link "Back", to: Routes.user_link_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 New Fingerprint profile
+
+= render "form.html", Map.put(assigns, :action, Routes.fingerprint_profile_path(@conn, :create))
+
+= link "Back", to: Routes.fingerprint_profile_path(@conn, :index)

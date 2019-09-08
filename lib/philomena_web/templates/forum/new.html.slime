@@ -1,0 +1,5 @@
+h2 New Forum
+
+= render "form.html", Map.put(assigns, :action, Routes.forum_path(@conn, :create))
+
+= link "Back", to: Routes.forum_path(@conn, :index)

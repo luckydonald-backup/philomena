@@ -1,0 +1,7 @@
+h2 Show Topic
+
+ul
+
+= link "Edit", to: Routes.topic_path(@conn, :edit, @topic)
+| &nbsp;
+= link "Back", to: Routes.topic_path(@conn, :index)

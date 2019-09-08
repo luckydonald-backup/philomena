@@ -1,0 +1,17 @@
+h2 Listing Adverts
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for advert <- @adverts do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.advert_path(@conn, :show, advert), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.advert_path(@conn, :edit, advert), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.advert_path(@conn, :delete, advert), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Advert", to: Routes.advert_path(@conn, :new)

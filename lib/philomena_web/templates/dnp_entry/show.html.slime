@@ -1,0 +1,7 @@
+h2 Show Dnp entry
+
+ul
+
+= link "Edit", to: Routes.dnp_entry_path(@conn, :edit, @dnp_entry)
+| &nbsp;
+= link "Back", to: Routes.dnp_entry_path(@conn, :index)

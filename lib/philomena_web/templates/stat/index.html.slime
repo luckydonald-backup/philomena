@@ -1,0 +1,17 @@
+h2 Listing Stats
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for stat <- @stats do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.stat_path(@conn, :show, stat), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.stat_path(@conn, :edit, stat), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.stat_path(@conn, :delete, stat), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Stat", to: Routes.stat_path(@conn, :new)

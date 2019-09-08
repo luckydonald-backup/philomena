@@ -1,0 +1,17 @@
+h2 Listing Oembeds
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for oembed <- @oembeds do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.oembed_path(@conn, :show, oembed), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.oembed_path(@conn, :edit, oembed), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.oembed_path(@conn, :delete, oembed), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Oembed", to: Routes.oembed_path(@conn, :new)

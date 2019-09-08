@@ -1,0 +1,7 @@
+h2 Show List
+
+ul
+
+= link "Edit", to: Routes.list_path(@conn, :edit, @list)
+| &nbsp;
+= link "Back", to: Routes.list_path(@conn, :index)

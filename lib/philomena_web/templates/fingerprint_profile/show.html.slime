@@ -1,0 +1,7 @@
+h2 Show Fingerprint profile
+
+ul
+
+= link "Edit", to: Routes.fingerprint_profile_path(@conn, :edit, @fingerprint_profile)
+| &nbsp;
+= link "Back", to: Routes.fingerprint_profile_path(@conn, :index)

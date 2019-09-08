@@ -1,0 +1,7 @@
+h2 Show Activity
+
+ul
+
+= link "Edit", to: Routes.activity_path(@conn, :edit, @activity)
+| &nbsp;
+= link "Back", to: Routes.activity_path(@conn, :index)

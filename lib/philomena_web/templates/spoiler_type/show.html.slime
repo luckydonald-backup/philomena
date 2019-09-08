@@ -1,0 +1,7 @@
+h2 Show Spoiler type
+
+ul
+
+= link "Edit", to: Routes.spoiler_type_path(@conn, :edit, @spoiler_type)
+| &nbsp;
+= link "Back", to: Routes.spoiler_type_path(@conn, :index)

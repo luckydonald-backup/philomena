@@ -1,0 +1,5 @@
+h2 New Advert
+
+= render "form.html", Map.put(assigns, :action, Routes.advert_path(@conn, :create))
+
+= link "Back", to: Routes.advert_path(@conn, :index)

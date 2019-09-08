@@ -1,0 +1,5 @@
+h2 New Duplicate report
+
+= render "form.html", Map.put(assigns, :action, Routes.duplicate_report_path(@conn, :create))
+
+= link "Back", to: Routes.duplicate_report_path(@conn, :index)

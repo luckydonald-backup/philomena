@@ -1,0 +1,17 @@
+h2 Listing Dnp entries
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for dnp_entry <- @dnp_entries do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.dnp_entry_path(@conn, :show, dnp_entry), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.dnp_entry_path(@conn, :edit, dnp_entry), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.dnp_entry_path(@conn, :delete, dnp_entry), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Dnp entry", to: Routes.dnp_entry_path(@conn, :new)

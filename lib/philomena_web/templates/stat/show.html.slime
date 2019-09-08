@@ -1,0 +1,7 @@
+h2 Show Stat
+
+ul
+
+= link "Edit", to: Routes.stat_path(@conn, :edit, @stat)
+| &nbsp;
+= link "Back", to: Routes.stat_path(@conn, :index)

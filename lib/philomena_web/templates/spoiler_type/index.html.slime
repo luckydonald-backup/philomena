@@ -1,0 +1,17 @@
+h2 Listing Spoiler types
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for spoiler_type <- @spoiler_types do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.spoiler_type_path(@conn, :show, spoiler_type), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.spoiler_type_path(@conn, :edit, spoiler_type), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.spoiler_type_path(@conn, :delete, spoiler_type), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Spoiler type", to: Routes.spoiler_type_path(@conn, :new)

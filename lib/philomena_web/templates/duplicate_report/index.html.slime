@@ -1,0 +1,17 @@
+h2 Listing Duplicate reports
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for duplicate_report <- @duplicate_reports do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.duplicate_report_path(@conn, :show, duplicate_report), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.duplicate_report_path(@conn, :edit, duplicate_report), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.duplicate_report_path(@conn, :delete, duplicate_report), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Duplicate report", to: Routes.duplicate_report_path(@conn, :new)

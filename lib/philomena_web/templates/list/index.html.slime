@@ -1,0 +1,17 @@
+h2 Listing Lists
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for list <- @lists do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.list_path(@conn, :show, list), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.list_path(@conn, :edit, list), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.list_path(@conn, :delete, list), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New List", to: Routes.list_path(@conn, :new)

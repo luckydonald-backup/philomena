@@ -1,0 +1,5 @@
+h2 Edit Activity
+
+= render "form.html", Map.put(assigns, :action, Routes.activity_path(@conn, :update, @activity))
+
+= link "Back", to: Routes.activity_path(@conn, :index)

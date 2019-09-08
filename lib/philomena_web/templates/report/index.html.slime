@@ -1,0 +1,17 @@
+h2 Listing Reports
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for report <- @reports do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.report_path(@conn, :show, report), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.report_path(@conn, :edit, report), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.report_path(@conn, :delete, report), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Report", to: Routes.report_path(@conn, :new)

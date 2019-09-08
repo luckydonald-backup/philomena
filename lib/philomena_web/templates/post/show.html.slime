@@ -1,0 +1,7 @@
+h2 Show Post
+
+ul
+
+= link "Edit", to: Routes.post_path(@conn, :edit, @post)
+| &nbsp;
+= link "Back", to: Routes.post_path(@conn, :index)

@@ -1,0 +1,17 @@
+h2 Listing Topics
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for topic <- @topics do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.topic_path(@conn, :show, topic), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.topic_path(@conn, :edit, topic), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.topic_path(@conn, :delete, topic), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Topic", to: Routes.topic_path(@conn, :new)

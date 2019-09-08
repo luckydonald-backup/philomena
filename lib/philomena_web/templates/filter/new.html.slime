@@ -1,0 +1,5 @@
+h2 New Filter
+
+= render "form.html", Map.put(assigns, :action, Routes.filter_path(@conn, :create))
+
+= link "Back", to: Routes.filter_path(@conn, :index)

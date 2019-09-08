@@ -1,0 +1,17 @@
+h2 Listing Ip profiles
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for ip_profile <- @ip_profiles do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.ip_profile_path(@conn, :show, ip_profile), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.ip_profile_path(@conn, :edit, ip_profile), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.ip_profile_path(@conn, :delete, ip_profile), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Ip profile", to: Routes.ip_profile_path(@conn, :new)

@@ -1,0 +1,7 @@
+h2 Show Notification
+
+ul
+
+= link "Edit", to: Routes.notification_path(@conn, :edit, @notification)
+| &nbsp;
+= link "Back", to: Routes.notification_path(@conn, :index)

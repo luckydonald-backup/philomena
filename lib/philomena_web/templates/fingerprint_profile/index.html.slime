@@ -1,0 +1,17 @@
+h2 Listing Fingerprint profiles
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for fingerprint_profile <- @fingerprint_profiles do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.fingerprint_profile_path(@conn, :show, fingerprint_profile), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.fingerprint_profile_path(@conn, :edit, fingerprint_profile), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.fingerprint_profile_path(@conn, :delete, fingerprint_profile), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Fingerprint profile", to: Routes.fingerprint_profile_path(@conn, :new)

@@ -1,0 +1,7 @@
+h2 Show Duplicate report
+
+ul
+
+= link "Edit", to: Routes.duplicate_report_path(@conn, :edit, @duplicate_report)
+| &nbsp;
+= link "Back", to: Routes.duplicate_report_path(@conn, :index)

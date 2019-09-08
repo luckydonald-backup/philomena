@@ -1,0 +1,5 @@
+h2 New Staff
+
+= render "form.html", Map.put(assigns, :action, Routes.staff_path(@conn, :create))
+
+= link "Back", to: Routes.staff_path(@conn, :index)

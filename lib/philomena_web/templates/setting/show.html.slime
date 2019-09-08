@@ -1,0 +1,7 @@
+h2 Show Setting
+
+ul
+
+= link "Edit", to: Routes.setting_path(@conn, :edit, @setting)
+| &nbsp;
+= link "Back", to: Routes.setting_path(@conn, :index)

@@ -1,0 +1,17 @@
+h2 Listing Changelogs
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for changelog <- @changelogs do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.changelog_path(@conn, :show, changelog), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.changelog_path(@conn, :edit, changelog), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.changelog_path(@conn, :delete, changelog), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Changelog", to: Routes.changelog_path(@conn, :new)

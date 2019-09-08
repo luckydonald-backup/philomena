@@ -1,0 +1,5 @@
+h2 New Static page
+
+= render "form.html", Map.put(assigns, :action, Routes.static_page_path(@conn, :create))
+
+= link "Back", to: Routes.static_page_path(@conn, :index)

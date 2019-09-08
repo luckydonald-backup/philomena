@@ -1,0 +1,7 @@
+h2 Show Filter
+
+ul
+
+= link "Edit", to: Routes.filter_path(@conn, :edit, @filter)
+| &nbsp;
+= link "Back", to: Routes.filter_path(@conn, :index)

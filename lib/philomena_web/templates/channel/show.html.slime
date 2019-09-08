@@ -1,0 +1,7 @@
+h2 Show Channel
+
+ul
+
+= link "Edit", to: Routes.channel_path(@conn, :edit, @channel)
+| &nbsp;
+= link "Back", to: Routes.channel_path(@conn, :index)

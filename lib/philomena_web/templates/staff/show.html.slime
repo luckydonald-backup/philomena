@@ -1,0 +1,7 @@
+h2 Show Staff
+
+ul
+
+= link "Edit", to: Routes.staff_path(@conn, :edit, @staff)
+| &nbsp;
+= link "Back", to: Routes.staff_path(@conn, :index)

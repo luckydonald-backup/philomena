@@ -1,0 +1,5 @@
+h2 Edit Topic
+
+= render "form.html", Map.put(assigns, :action, Routes.topic_path(@conn, :update, @topic))
+
+= link "Back", to: Routes.topic_path(@conn, :index)

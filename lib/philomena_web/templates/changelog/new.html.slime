@@ -1,0 +1,5 @@
+h2 New Changelog
+
+= render "form.html", Map.put(assigns, :action, Routes.changelog_path(@conn, :create))
+
+= link "Back", to: Routes.changelog_path(@conn, :index)
