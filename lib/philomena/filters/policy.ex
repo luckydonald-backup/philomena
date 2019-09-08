@@ -16,4 +16,6 @@ defmodule Philomena.Filters.Policy do
   def authorize(:destroy, user, filter) do
     !!filter.user_id and filter.user_id == user.id and filter.user_count == 0
   end
+
+  def authorize(_action, _user, _filter), do: false
 end

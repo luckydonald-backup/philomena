@@ -1,62 +1,38 @@
 defmodule PhilomenaWeb.Filters.CurrentController do
   use PhilomenaWeb, :controller
 
-  alias Philomena.Filters
-  alias Philomena.Filters.Current
+  alias Philomena.{Filters, Users}
 
-  def index(conn, _params) do
-    current = Filters.list_current()
-    render(conn, "index.html", current: current)
+  def show(conn, _params) do
+    conn
+    |> redirect(to: Routes.filter_path(conn, :show, conn.assigns[:current_filter].id))
   end
 
-  def new(conn, _params) do
-    changeset = Filters.change_current(%Current{})
-    render(conn, "new.html", changeset: changeset)
-  end
+  def update(conn, %{"id" => id}) do
+    filter = Filters.get_filter!(id)
+    user = current_user(conn)
 
-  def create(conn, %{"current" => current_params}) do
-    case Filters.create_current(current_params) do
-      {:ok, current} ->
+    with :ok <- Bodyguard.permit(Filter, :read, user, filter),
+         conn <- set_filter(conn, user, filter.id)
+    do
+      conn
+      |> put_flash(:info, "Filter updated successfully.")
+      |> redirect(to: Routes.filters_path(conn, :index))
+    else
+      _ ->
         conn
-        |> put_flash(:info, "Current created successfully.")
-        |> redirect(to: Routes.filters_current_path(conn, :show, current))
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        |> put_flash(:error, "Failed to set filter!")
+        |> redirect(to: Routes.filters_path(conn, :index))
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    current = Filters.get_current!(id)
-    render(conn, "show.html", current: current)
+  defp set_filter(conn, nil, filter_id) do
+    conn |> put_session(:filter_id, filter_id)
   end
 
-  def edit(conn, %{"id" => id}) do
-    current = Filters.get_current!(id)
-    changeset = Filters.change_current(current)
-    render(conn, "edit.html", current: current, changeset: changeset)
-  end
-
-  def update(conn, %{"id" => id, "current" => current_params}) do
-    current = Filters.get_current!(id)
-
-    case Filters.update_current(current, current_params) do
-      {:ok, current} ->
-        conn
-        |> put_flash(:info, "Current updated successfully.")
-        |> redirect(to: Routes.filters_current_path(conn, :show, current))
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", current: current, changeset: changeset)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    current = Filters.get_current!(id)
-    {:ok, _current} = Filters.delete_current(current)
+  defp set_filter(conn, user, filter_id) do
+    user |> Users.update_user(%{current_filter_id: filter_id})
 
     conn
-    |> put_flash(:info, "Current deleted successfully.")
-    |> redirect(to: Routes.filters_current_path(conn, :index))
   end
 end

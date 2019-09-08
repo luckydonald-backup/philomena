@@ -1,4 +1,4 @@
-defmodule PhilomenaWeb.Filters.HideController do
+defmodule PhilomenaWeb.Filters.SpoilerController do
   use PhilomenaWeb, :controller
 
   alias Philomena.{Filters, Tags}
@@ -10,7 +10,7 @@ defmodule PhilomenaWeb.Filters.HideController do
 
     with :ok <- Bodyguard.permit(Filter, :edit, user, filter) do
       filter
-      |> Filters.update_filter(%{hidden_tag_ids: [tag.id | filter.hidden_tag_ids]})
+      |> Filters.update_filter(%{spoilered_tag_ids: [tag.id | filter.spoilered_tag_ids]})
 
       conn
       |> put_flash(:info, "Tag successfully hidden.")
@@ -25,7 +25,7 @@ defmodule PhilomenaWeb.Filters.HideController do
 
     with :ok <- Bodyguard.permit(Filter, :edit, user, filter) do
       filter
-      |> Filters.update_filter(%{hidden_tag_ids: List.delete(filter.hidden_tag_ids, tag.id)})
+      |> Filters.update_filter(%{spoilered_tag_ids: List.delete(filter.spoilered_tag_ids, tag.id)})
 
       conn
       |> put_flash(:info, "Tag successfully hidden.")

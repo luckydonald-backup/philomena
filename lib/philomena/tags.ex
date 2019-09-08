@@ -38,6 +38,30 @@ defmodule Philomena.Tags do
   def get_tag!(id), do: Repo.get!(Tag, id)
 
   @doc """
+  Gets a single tag.
+
+  Raises `Ecto.NoResultsError` if the Tag does not exist.
+
+  ## Examples
+
+      iex> get_by_slug_or_id!(123)
+      %Tag{}
+
+      iex> get_by_slug_or_id!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_by_slug_or_id!(id) do
+    by_slug = Tag |> where(slug: ^id) |> Repo.one()
+
+    if by_slug do
+      by_slug
+    else
+      Tag |> where(id: ^id) |> Repo.one!()
+    end
+  end
+
+  @doc """
   Creates a tag.
 
   ## Examples
