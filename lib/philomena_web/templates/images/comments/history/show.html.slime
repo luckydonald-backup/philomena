@@ -1,0 +1,7 @@
+h2 Show History
+
+ul
+
+= link "Edit", to: Routes.images_comments_history_path(@conn, :edit, @history)
+| &nbsp;
+= link "Back", to: Routes.images_comments_history_path(@conn, :index)

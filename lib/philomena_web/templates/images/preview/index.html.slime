@@ -1,0 +1,17 @@
+h2 Listing Image previews
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for preview <- @image_previews do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_preview_path(@conn, :show, preview), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_preview_path(@conn, :edit, preview), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_preview_path(@conn, :delete, preview), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Preview", to: Routes.images_preview_path(@conn, :new)

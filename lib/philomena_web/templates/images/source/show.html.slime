@@ -1,0 +1,7 @@
+h2 Show Source
+
+ul
+
+= link "Edit", to: Routes.images_source_path(@conn, :edit, @source)
+| &nbsp;
+= link "Back", to: Routes.images_source_path(@conn, :index)

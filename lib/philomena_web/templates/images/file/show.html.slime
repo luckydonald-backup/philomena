@@ -1,0 +1,7 @@
+h2 Show File
+
+ul
+
+= link "Edit", to: Routes.images_file_path(@conn, :edit, @file)
+| &nbsp;
+= link "Back", to: Routes.images_file_path(@conn, :index)

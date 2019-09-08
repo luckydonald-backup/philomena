@@ -1,0 +1,17 @@
+h2 Listing Uploader
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for uploader <- @uploader do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_uploader_path(@conn, :show, uploader), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_uploader_path(@conn, :edit, uploader), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_uploader_path(@conn, :delete, uploader), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Uploader", to: Routes.images_uploader_path(@conn, :new)

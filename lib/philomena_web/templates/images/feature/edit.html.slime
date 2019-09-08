@@ -1,0 +1,5 @@
+h2 Edit Feature
+
+= render "form.html", Map.put(assigns, :action, Routes.images_feature_path(@conn, :update, @feature))
+
+= link "Back", to: Routes.images_feature_path(@conn, :index)

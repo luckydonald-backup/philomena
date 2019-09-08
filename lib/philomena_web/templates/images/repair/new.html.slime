@@ -1,0 +1,5 @@
+h2 New Repair
+
+= render "form.html", Map.put(assigns, :action, Routes.repair_path(@conn, :create))
+
+= link "Back", to: Routes.images_repair_path(@conn, :index)

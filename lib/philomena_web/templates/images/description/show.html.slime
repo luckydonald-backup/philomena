@@ -1,0 +1,7 @@
+h2 Show Description
+
+ul
+
+= link "Edit", to: Routes.images_description_path(@conn, :edit, @description)
+| &nbsp;
+= link "Back", to: Routes.images_description_path(@conn, :index)

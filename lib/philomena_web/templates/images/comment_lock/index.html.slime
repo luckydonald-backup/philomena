@@ -1,0 +1,17 @@
+h2 Listing Comment locks
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for comment_lock <- @comment_locks do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_comment_lock_path(@conn, :show, comment_lock), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_comment_lock_path(@conn, :edit, comment_lock), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_comment_lock_path(@conn, :delete, comment_lock), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Comment lock", to: Routes.images_comment_lock_path(@conn, :new)

@@ -1,0 +1,17 @@
+h2 Listing Image features
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for feature <- @image_features do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_feature_path(@conn, :show, feature), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_feature_path(@conn, :edit, feature), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_feature_path(@conn, :delete, feature), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Feature", to: Routes.images_feature_path(@conn, :new)

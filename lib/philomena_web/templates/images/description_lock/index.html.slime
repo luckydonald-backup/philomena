@@ -1,0 +1,17 @@
+h2 Listing Description locks
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for description_lock <- @description_locks do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_description_lock_path(@conn, :show, description_lock), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_description_lock_path(@conn, :edit, description_lock), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_description_lock_path(@conn, :delete, description_lock), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Description lock", to: Routes.images_description_lock_path(@conn, :new)

@@ -1,0 +1,7 @@
+h2 Show Scratchpad
+
+ul
+
+= link "Edit", to: Routes.images_scratchpad_path(@conn, :edit, @scratchpad)
+| &nbsp;
+= link "Back", to: Routes.images_scratchpad_path(@conn, :index)

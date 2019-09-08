@@ -1,0 +1,7 @@
+h2 Show Preview
+
+ul
+
+= link "Edit", to: Routes.images_preview_path(@conn, :edit, @preview)
+| &nbsp;
+= link "Back", to: Routes.images_preview_path(@conn, :index)

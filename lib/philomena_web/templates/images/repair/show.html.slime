@@ -1,0 +1,7 @@
+h2 Show Repair
+
+ul
+
+= link "Edit", to: Routes.images_repair_path(@conn, :edit, @repair)
+| &nbsp;
+= link "Back", to: Routes.images_repair_path(@conn, :index)

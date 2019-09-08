@@ -1,0 +1,17 @@
+h2 Listing Tag changes
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for tag_change <- @tag_changes do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_tag_change_path(@conn, :show, tag_change), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_tag_change_path(@conn, :edit, tag_change), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_tag_change_path(@conn, :delete, tag_change), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Tag change", to: Routes.images_tag_change_path(@conn, :new)

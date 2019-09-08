@@ -1,0 +1,5 @@
+h2 New Hash
+
+= render "form.html", Map.put(assigns, :action, Routes.hash_path(@conn, :create))
+
+= link "Back", to: Routes.images_hash_path(@conn, :index)

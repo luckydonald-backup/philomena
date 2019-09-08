@@ -1,0 +1,5 @@
+h2 New Comment
+
+= render "form.html", Map.put(assigns, :action, Routes.comment_path(@conn, :create))
+
+= link "Back", to: Routes.images_comment_path(@conn, :index)

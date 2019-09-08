@@ -1,0 +1,7 @@
+h2 Show Comment lock
+
+ul
+
+= link "Edit", to: Routes.images_comment_lock_path(@conn, :edit, @comment_lock)
+| &nbsp;
+= link "Back", to: Routes.images_comment_lock_path(@conn, :index)

@@ -1,0 +1,7 @@
+h2 Show Favorite
+
+ul
+
+= link "Edit", to: Routes.images_favorite_path(@conn, :edit, @favorite)
+| &nbsp;
+= link "Back", to: Routes.images_favorite_path(@conn, :index)

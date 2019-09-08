@@ -1,0 +1,17 @@
+h2 Listing Repairs
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for repair <- @repairs do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_repair_path(@conn, :show, repair), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_repair_path(@conn, :edit, repair), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_repair_path(@conn, :delete, repair), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Repair", to: Routes.images_repair_path(@conn, :new)

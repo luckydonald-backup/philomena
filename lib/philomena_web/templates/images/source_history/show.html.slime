@@ -1,0 +1,7 @@
+h2 Show Source history
+
+ul
+
+= link "Edit", to: Routes.images_source_history_path(@conn, :edit, @source_history)
+| &nbsp;
+= link "Back", to: Routes.images_source_history_path(@conn, :index)

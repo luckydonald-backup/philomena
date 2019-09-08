@@ -1,0 +1,7 @@
+h2 Show Feature
+
+ul
+
+= link "Edit", to: Routes.images_feature_path(@conn, :edit, @feature)
+| &nbsp;
+= link "Back", to: Routes.images_feature_path(@conn, :index)

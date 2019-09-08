@@ -1,0 +1,5 @@
+h2 Edit Tag lock
+
+= render "form.html", Map.put(assigns, :action, Routes.images_tag_lock_path(@conn, :update, @tag_lock))
+
+= link "Back", to: Routes.images_tag_lock_path(@conn, :index)

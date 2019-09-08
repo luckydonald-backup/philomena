@@ -1,0 +1,5 @@
+h2 Edit Description
+
+= render "form.html", Map.put(assigns, :action, Routes.images_description_path(@conn, :update, @description))
+
+= link "Back", to: Routes.images_description_path(@conn, :index)

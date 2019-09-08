@@ -1,0 +1,7 @@
+h2 Show Hash
+
+ul
+
+= link "Edit", to: Routes.images_hash_path(@conn, :edit, @hash)
+| &nbsp;
+= link "Back", to: Routes.images_hash_path(@conn, :index)

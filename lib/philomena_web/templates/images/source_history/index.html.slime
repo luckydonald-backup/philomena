@@ -1,0 +1,17 @@
+h2 Listing Source histories
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for source_history <- @source_histories do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_source_history_path(@conn, :show, source_history), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_source_history_path(@conn, :edit, source_history), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_source_history_path(@conn, :delete, source_history), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Source history", to: Routes.images_source_history_path(@conn, :new)

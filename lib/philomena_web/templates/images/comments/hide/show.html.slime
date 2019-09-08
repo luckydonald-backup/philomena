@@ -1,0 +1,7 @@
+h2 Show Hide
+
+ul
+
+= link "Edit", to: Routes.images_comments_hide_path(@conn, :edit, @hide)
+| &nbsp;
+= link "Back", to: Routes.images_comments_hide_path(@conn, :index)

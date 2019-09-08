@@ -1,0 +1,5 @@
+h2 Edit Hide
+
+= render "form.html", Map.put(assigns, :action, Routes.images_comments_hide_path(@conn, :update, @hide))
+
+= link "Back", to: Routes.images_comments_hide_path(@conn, :index)

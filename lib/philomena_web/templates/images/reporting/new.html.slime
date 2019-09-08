@@ -1,0 +1,5 @@
+h2 New Reporting
+
+= render "form.html", Map.put(assigns, :action, Routes.reporting_path(@conn, :create))
+
+= link "Back", to: Routes.images_reporting_path(@conn, :index)

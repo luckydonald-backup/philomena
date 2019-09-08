@@ -1,0 +1,17 @@
+h2 Listing Sources
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for source <- @sources do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_source_path(@conn, :show, source), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_source_path(@conn, :edit, source), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_source_path(@conn, :delete, source), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Source", to: Routes.images_source_path(@conn, :new)

@@ -1,0 +1,7 @@
+h2 Show Reporting
+
+ul
+
+= link "Edit", to: Routes.images_reporting_path(@conn, :edit, @reporting)
+| &nbsp;
+= link "Back", to: Routes.images_reporting_path(@conn, :index)

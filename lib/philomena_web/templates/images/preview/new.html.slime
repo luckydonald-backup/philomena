@@ -1,0 +1,5 @@
+h2 New Preview
+
+= render "form.html", Map.put(assigns, :action, Routes.preview_path(@conn, :create))
+
+= link "Back", to: Routes.images_preview_path(@conn, :index)

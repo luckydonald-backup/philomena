@@ -1,0 +1,17 @@
+h2 Listing Watched
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for watched <- @watched do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_watched_path(@conn, :show, watched), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_watched_path(@conn, :edit, watched), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_watched_path(@conn, :delete, watched), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Watched", to: Routes.images_watched_path(@conn, :new)

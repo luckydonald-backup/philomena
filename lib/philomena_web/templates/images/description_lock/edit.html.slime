@@ -1,0 +1,5 @@
+h2 Edit Description lock
+
+= render "form.html", Map.put(assigns, :action, Routes.images_description_lock_path(@conn, :update, @description_lock))
+
+= link "Back", to: Routes.images_description_lock_path(@conn, :index)

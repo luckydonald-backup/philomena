@@ -1,0 +1,7 @@
+h2 Show Vote
+
+ul
+
+= link "Edit", to: Routes.images_vote_path(@conn, :edit, @vote)
+| &nbsp;
+= link "Back", to: Routes.images_vote_path(@conn, :index)

@@ -1,0 +1,17 @@
+h2 Listing Image faves
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for favorite <- @image_faves do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_favorite_path(@conn, :show, favorite), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_favorite_path(@conn, :edit, favorite), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_favorite_path(@conn, :delete, favorite), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Favorite", to: Routes.images_favorite_path(@conn, :new)

@@ -1,0 +1,7 @@
+h2 Show Related
+
+ul
+
+= link "Edit", to: Routes.images_related_path(@conn, :edit, @related)
+| &nbsp;
+= link "Back", to: Routes.images_related_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 Edit Favorite
+
+= render "form.html", Map.put(assigns, :action, Routes.images_favorite_path(@conn, :update, @favorite))
+
+= link "Back", to: Routes.images_favorite_path(@conn, :index)

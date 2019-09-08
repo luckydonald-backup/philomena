@@ -1,0 +1,5 @@
+h2 New File
+
+= render "form.html", Map.put(assigns, :action, Routes.file_path(@conn, :create))
+
+= link "Back", to: Routes.images_file_path(@conn, :index)

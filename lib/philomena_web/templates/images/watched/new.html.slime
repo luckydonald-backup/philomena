@@ -1,0 +1,5 @@
+h2 New Watched
+
+= render "form.html", Map.put(assigns, :action, Routes.watched_path(@conn, :create))
+
+= link "Back", to: Routes.images_watched_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 New Feature
+
+= render "form.html", Map.put(assigns, :action, Routes.feature_path(@conn, :create))
+
+= link "Back", to: Routes.images_feature_path(@conn, :index)

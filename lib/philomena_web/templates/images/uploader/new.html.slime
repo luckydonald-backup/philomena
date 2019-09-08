@@ -1,0 +1,5 @@
+h2 New Uploader
+
+= render "form.html", Map.put(assigns, :action, Routes.uploader_path(@conn, :create))
+
+= link "Back", to: Routes.images_uploader_path(@conn, :index)

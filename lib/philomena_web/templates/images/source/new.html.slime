@@ -1,0 +1,5 @@
+h2 New Source
+
+= render "form.html", Map.put(assigns, :action, Routes.source_path(@conn, :create))
+
+= link "Back", to: Routes.images_source_path(@conn, :index)

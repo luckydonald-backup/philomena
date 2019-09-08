@@ -1,0 +1,17 @@
+h2 Listing Image hashes
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for hash <- @image_hashes do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.images_hash_path(@conn, :show, hash), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.images_hash_path(@conn, :edit, hash), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.images_hash_path(@conn, :delete, hash), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Hash", to: Routes.images_hash_path(@conn, :new)

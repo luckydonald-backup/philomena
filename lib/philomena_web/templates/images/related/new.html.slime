@@ -1,0 +1,5 @@
+h2 New Related
+
+= render "form.html", Map.put(assigns, :action, Routes.related_path(@conn, :create))
+
+= link "Back", to: Routes.images_related_path(@conn, :index)

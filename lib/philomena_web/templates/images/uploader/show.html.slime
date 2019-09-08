@@ -1,0 +1,7 @@
+h2 Show Uploader
+
+ul
+
+= link "Edit", to: Routes.images_uploader_path(@conn, :edit, @uploader)
+| &nbsp;
+= link "Back", to: Routes.images_uploader_path(@conn, :index)

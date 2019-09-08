@@ -1,0 +1,7 @@
+h2 Show Watched
+
+ul
+
+= link "Edit", to: Routes.images_watched_path(@conn, :edit, @watched)
+| &nbsp;
+= link "Back", to: Routes.images_watched_path(@conn, :index)
