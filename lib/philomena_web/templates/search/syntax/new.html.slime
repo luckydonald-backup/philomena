@@ -1,0 +1,5 @@
+h2 New Syntax
+
+= render "form.html", Map.put(assigns, :action, Routes.syntax_path(@conn, :create))
+
+= link "Back", to: Routes.search_syntax_path(@conn, :index)

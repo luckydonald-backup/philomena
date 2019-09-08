@@ -1,0 +1,7 @@
+h2 Show Syntax
+
+ul
+
+= link "Edit", to: Routes.search_syntax_path(@conn, :edit, @syntax)
+| &nbsp;
+= link "Back", to: Routes.search_syntax_path(@conn, :index)

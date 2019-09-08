@@ -1,0 +1,7 @@
+h2 Show Mass revert
+
+ul
+
+= link "Edit", to: Routes.tag_changes_mass_revert_path(@conn, :edit, @mass_revert)
+| &nbsp;
+= link "Back", to: Routes.tag_changes_mass_revert_path(@conn, :index)

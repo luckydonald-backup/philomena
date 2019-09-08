@@ -1,0 +1,5 @@
+h2 New Mass revert
+
+= render "form.html", Map.put(assigns, :action, Routes.mass_revert_path(@conn, :create))
+
+= link "Back", to: Routes.tag_changes_mass_revert_path(@conn, :index)

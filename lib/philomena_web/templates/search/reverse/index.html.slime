@@ -1,0 +1,17 @@
+h2 Listing Reverse
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for reverse <- @reverse do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.search_reverse_path(@conn, :show, reverse), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.search_reverse_path(@conn, :edit, reverse), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.search_reverse_path(@conn, :delete, reverse), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Reverse", to: Routes.search_reverse_path(@conn, :new)

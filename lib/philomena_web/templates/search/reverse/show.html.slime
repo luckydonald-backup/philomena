@@ -1,0 +1,7 @@
+h2 Show Reverse
+
+ul
+
+= link "Edit", to: Routes.search_reverse_path(@conn, :edit, @reverse)
+| &nbsp;
+= link "Back", to: Routes.search_reverse_path(@conn, :index)

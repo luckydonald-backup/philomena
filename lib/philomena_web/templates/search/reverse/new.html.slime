@@ -1,0 +1,5 @@
+h2 New Reverse
+
+= render "form.html", Map.put(assigns, :action, Routes.reverse_path(@conn, :create))
+
+= link "Back", to: Routes.search_reverse_path(@conn, :index)
