@@ -1,0 +1,5 @@
+h2 New Stick
+
+= render "form.html", Map.put(assigns, :action, Routes.stick_path(@conn, :create))
+
+= link "Back", to: Routes.topics_stick_path(@conn, :index)

@@ -1,0 +1,5 @@
+h2 New Lock
+
+= render "form.html", Map.put(assigns, :action, Routes.lock_path(@conn, :create))
+
+= link "Back", to: Routes.topics_lock_path(@conn, :index)

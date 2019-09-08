@@ -1,0 +1,17 @@
+h2 Listing Moves
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for move <- @moves do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.topics_move_path(@conn, :show, move), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.topics_move_path(@conn, :edit, move), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.topics_move_path(@conn, :delete, move), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Move", to: Routes.topics_move_path(@conn, :new)

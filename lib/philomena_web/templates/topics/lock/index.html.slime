@@ -1,0 +1,17 @@
+h2 Listing Locks
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for lock <- @locks do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.topics_lock_path(@conn, :show, lock), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.topics_lock_path(@conn, :edit, lock), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.topics_lock_path(@conn, :delete, lock), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Lock", to: Routes.topics_lock_path(@conn, :new)

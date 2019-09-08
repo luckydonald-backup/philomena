@@ -1,0 +1,17 @@
+h2 Listing Histories
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for history <- @histories do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.topics_posts_history_path(@conn, :show, history), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.topics_posts_history_path(@conn, :edit, history), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.topics_posts_history_path(@conn, :delete, history), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New History", to: Routes.topics_posts_history_path(@conn, :new)

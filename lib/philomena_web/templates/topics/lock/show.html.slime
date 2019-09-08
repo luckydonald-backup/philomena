@@ -1,0 +1,7 @@
+h2 Show Lock
+
+ul
+
+= link "Edit", to: Routes.topics_lock_path(@conn, :edit, @lock)
+| &nbsp;
+= link "Back", to: Routes.topics_lock_path(@conn, :index)

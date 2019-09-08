@@ -1,0 +1,17 @@
+h2 Listing Sticks
+
+table.table
+  thead
+    tr
+      th
+  tbody
+    = for stick <- @sticks do
+      tr
+        td class="text-right"
+          = link "Show", to: Routes.topics_stick_path(@conn, :show, stick), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Edit", to: Routes.topics_stick_path(@conn, :edit, stick), class: "btn btn-default btn-xs"
+          | &nbsp;
+          = link "Delete", to: Routes.topics_stick_path(@conn, :delete, stick), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs"
+
+= link "New Stick", to: Routes.topics_stick_path(@conn, :new)

@@ -1,0 +1,5 @@
+h2 Edit History
+
+= render "form.html", Map.put(assigns, :action, Routes.topics_posts_history_path(@conn, :update, @history))
+
+= link "Back", to: Routes.topics_posts_history_path(@conn, :index)

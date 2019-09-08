@@ -1,0 +1,5 @@
+h2 New Hide
+
+= render "form.html", Map.put(assigns, :action, Routes.hide_path(@conn, :create))
+
+= link "Back", to: Routes.topics_hide_path(@conn, :index)

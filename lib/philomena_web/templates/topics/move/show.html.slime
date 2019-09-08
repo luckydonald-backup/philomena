@@ -1,0 +1,7 @@
+h2 Show Move
+
+ul
+
+= link "Edit", to: Routes.topics_move_path(@conn, :edit, @move)
+| &nbsp;
+= link "Back", to: Routes.topics_move_path(@conn, :index)

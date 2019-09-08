@@ -1,0 +1,7 @@
+h2 Show Stick
+
+ul
+
+= link "Edit", to: Routes.topics_stick_path(@conn, :edit, @stick)
+| &nbsp;
+= link "Back", to: Routes.topics_stick_path(@conn, :index)
