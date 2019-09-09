@@ -19,8 +19,10 @@ defmodule Philomena.Forums do
       [%Forum{}, ...]
 
   """
-  def list_forums do
-    Repo.all(Forum)
+  def list_forums(user) do
+    Forum
+    |> Bodyguard.scope(user)
+    |> Repo.all()
   end
 
   @doc """
@@ -37,7 +39,12 @@ defmodule Philomena.Forums do
       ** (Ecto.NoResultsError)
 
   """
-  def get_forum!(id), do: Repo.get!(Forum, id)
+  def get_forum!(user, short_name) do
+    Forum
+    |> Bodyguard.scope(user)
+    |> where(short_name: ^short_name)
+    |> Repo.one()
+  end
 
   @doc """
   Creates a forum.
