@@ -1,62 +1,39 @@
 defmodule PhilomenaWeb.TopicController do
   use PhilomenaWeb, :controller
 
-  alias Philomena.Topics
-  alias Philomena.Topics.Topic
+  alias Philomena.{Forums, Topics, Topics.Topic, Repo}
+  import Ecto, only: [build_assoc: 3]
 
-  def index(conn, _params) do
-    topics = Topics.list_topics()
-    render(conn, "index.html", topics: topics)
-  end
+  def new(conn, %{"forum_id" => forum_id}) do
+    forum = Forums.get_forum!(current_user(conn), forum_id)
+    changeset = Topics.change_topic(build_assoc(forum, :topics))
 
-  def new(conn, _params) do
-    changeset = Topics.change_topic(%Topic{})
-    render(conn, "new.html", changeset: changeset)
-  end
-
-  def create(conn, %{"topic" => topic_params}) do
-    case Topics.create_topic(topic_params) do
-      {:ok, topic} ->
-        conn
-        |> put_flash(:info, "Topic created successfully.")
-        |> redirect(to: Routes.topic_path(conn, :show, topic))
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+    with :ok <- Bodyguard.permit(Topic, :create, user, changeset) do
+      render(conn, "new.html", changeset: changeset)
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    topic = Topics.get_topic!(id)
+  def create(conn, %{"forum_id" => forum_id, "topic" => topic_params}) do
+    forum = Forums.get_forum!(current_user(conn), forum_id)
+    changeset = build_assoc(forum, :topics) |> Topic.changeset(topic_params)
+
+    with :ok <- Bodyguard.permit(Topic, :create, current_user(conn), changeset) do
+      case Repo.insert(changeset) do
+        {:ok, topic} ->
+          conn
+          |> put_flash(:info, "Topic created successfully.")
+          |> redirect(to: Routes.forum_topic_path(conn, :show, forum, topic))
+
+        {:error, %Ecto.Changeset{} = changeset} ->
+          render(conn, "new.html", changeset: changeset)
+      end
+    end
+  end
+
+  def show(conn, %{"forum_id" => forum_id, "id" => id}) do
+    forum = Forums.get_forum!(current_user(conn), forum_id)
+    topic = Topics.get_topic!(forum, id)
+
     render(conn, "show.html", topic: topic)
-  end
-
-  def edit(conn, %{"id" => id}) do
-    topic = Topics.get_topic!(id)
-    changeset = Topics.change_topic(topic)
-    render(conn, "edit.html", topic: topic, changeset: changeset)
-  end
-
-  def update(conn, %{"id" => id, "topic" => topic_params}) do
-    topic = Topics.get_topic!(id)
-
-    case Topics.update_topic(topic, topic_params) do
-      {:ok, topic} ->
-        conn
-        |> put_flash(:info, "Topic updated successfully.")
-        |> redirect(to: Routes.topic_path(conn, :show, topic))
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", topic: topic, changeset: changeset)
-    end
-  end
-
-  def delete(conn, %{"id" => id}) do
-    topic = Topics.get_topic!(id)
-    {:ok, _topic} = Topics.delete_topic(topic)
-
-    conn
-    |> put_flash(:info, "Topic deleted successfully.")
-    |> redirect(to: Routes.topic_path(conn, :index))
   end
 end

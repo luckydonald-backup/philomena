@@ -40,6 +40,27 @@ defmodule Philomena.Topics do
   def get_topic!(id), do: Repo.get!(Topic, id)
 
   @doc """
+  Gets a topic belonging to a forum via its slug.
+
+  Raises `Ecto.NoResultsError` if the Topic does not exist.
+
+  ## Examples
+
+      iex> get_topic!(forum, 123)
+      %Topic{}
+
+      iex> get_topic!(forum, 456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_topic!(forum, id) do
+    Topic
+    |> where(forum_id: ^forum.id)
+    |> where(slug: ^id)
+    |> Repo.one!()
+  end
+
+  @doc """
   Creates a topic.
 
   ## Examples
@@ -51,8 +72,8 @@ defmodule Philomena.Topics do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_topic(attrs \\ %{}) do
-    %Topic{}
+  def create_topic(forum_id, attrs \\ %{}) do
+    %Topic{forum_id: forum_id}
     |> Topic.changeset(attrs)
     |> Repo.insert()
   end

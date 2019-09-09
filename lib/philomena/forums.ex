@@ -43,7 +43,7 @@ defmodule Philomena.Forums do
     Forum
     |> Bodyguard.scope(user)
     |> where(short_name: ^short_name)
-    |> Repo.one()
+    |> Repo.one!()
   end
 
   @doc """
